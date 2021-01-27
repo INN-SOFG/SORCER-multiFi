@@ -18,8 +18,12 @@ public class Recipe implements Serializable {
     private int amtMilk;
     private int amtSugar;
     private int amtChocolate;
-    
-    public Recipe() {
+
+	/**
+	 * No argument constructor for Recipe, creates new Recipe instance.
+	 * Initializes variables with corresponding default values.
+	 */
+	public Recipe() {
     	this.name = "";
     	this.price = 0;
     	this.amtCoffee = 0;
