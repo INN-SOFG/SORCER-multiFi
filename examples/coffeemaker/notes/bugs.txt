@@ -1,0 +1,9 @@
+1. DeleteRecipe method didn't actually remove given recipe from recipe list. After fix, given recipe is deleted. 
+
+2. Edit recipe method didn't correctly choose the recipe to update (compared newRecipe instead of oldRecipe). After fix, correct recipe is edited. 
+
+3. AddInventory method didn't validate the amount of sugar correcetly (was less than 0). After fix the amount of sugar is validated correctly (greater than 0).  
+
+4. MakeCoffee method was adding given amount of coffee from inventory, instead of substracting it. After fix, the amount of coffee is substracted from inventory.  
+
+5. User story defines maximal number of recipies as 3, in CoffeeMaker class maximal number of recipes was defined as 4. After fix, maximal number of recipes is defined as 3.  
