@@ -7,7 +7,9 @@ import java.rmi.RemoteException;
 
 public interface CoffeeMakerUI {
     public Context choosePurchaseBeverageOption(Context context) throws RemoteException, ContextException;
+
     public Context chooseDrinkAndSugar(Context context) throws RemoteException, ContextException;
+
     public Context payForDrink(Context context) throws RemoteException, ContextException;
 
 }

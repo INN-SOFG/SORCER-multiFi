@@ -1,19 +1,16 @@
 package edu.pjatk.inn.futurecoffemaker.impl;
 
 import edu.pjatk.inn.futurecoffemaker.CoffeeMaker;
-import edu.pjatk.inn.futurecoffemaker.CoffeeMakerUI;
 import sorcer.service.Context;
 import sorcer.service.ContextException;
 
 import java.rmi.RemoteException;
 
-import static sorcer.mo.operator.value;
+public class CoffeeMakerUI implements edu.pjatk.inn.futurecoffemaker.CoffeeMakerUI {
+    private CoffeeMaker coffeeMakerUI;
 
-public class CoffeeMakerUIImpl implements CoffeeMakerUI {
-    private CoffeeMaker coffeeMaker;
-
-    public CoffeeMakerUIImpl() {
-        this.coffeeMaker = new CoffeeMakerImpl();
+    public CoffeeMakerUI() {
+        this.coffeeMakerUI = new CoffeeMakerImpl();
     }
 
     @Override
@@ -29,7 +26,7 @@ public class CoffeeMakerUIImpl implements CoffeeMakerUI {
         if (context.getValue("chooseDrink") != null) {
             name = (String) context.getValue("chooseDrinkAndSugar");
         }
-        coffeeMaker.checkDrinkAvailability(context);
+        coffeeMakerUI.checkDrinkAvailability(context);
         context.putValue("coffeeMakerUI/chosenDrink", name);
         return context;
     }
