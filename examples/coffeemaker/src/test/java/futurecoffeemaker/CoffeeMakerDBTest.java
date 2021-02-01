@@ -1,6 +1,6 @@
 package futurecoffeemaker;
 
-import edu.pjatk.inn.futurecoffemaker.CoffeeMakerDB;
+import edu.pjatk.inn.futurecoffemaker.impl.CoffeeMakerDB;
 import org.junit.Test;
 import sorcer.service.Context;
 import sorcer.service.MogramException;

@@ -14,7 +14,7 @@ public class CoffeeMakerUITest {
 
     @Test
     public void testChoosePurchaseBeverageOption() throws MogramException, SignatureException {
-        Routine cmt = task(sig("choosePurchaseBeverageOption", CoffeeMakerUI.class));
+        Routine cmt = task(sig("choosePurchaseBeverageOption", CoffeeMakerUI.class), context(ent("any", "any")));
         Context out = context(exert(cmt));
         assertEquals(true, value(out, "coffeeMakerUI/optionsReturned"));
     }

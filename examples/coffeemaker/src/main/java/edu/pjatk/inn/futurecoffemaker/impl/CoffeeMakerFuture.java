@@ -6,7 +6,7 @@ import sorcer.service.ContextException;
 
 import java.rmi.RemoteException;
 
-public class CoffeeMakerDBImpl implements CoffeeMaker {
+public class CoffeeMakerFuture implements edu.pjatk.inn.futurecoffemaker.CoffeeMaker {
     @Override
     public Context checkDrinkAvailability(Context context) throws RemoteException, ContextException {
         return context;

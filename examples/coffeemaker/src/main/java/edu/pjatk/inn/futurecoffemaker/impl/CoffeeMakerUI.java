@@ -1,16 +1,15 @@
 package edu.pjatk.inn.futurecoffemaker.impl;
 
-import edu.pjatk.inn.futurecoffemaker.CoffeeMaker;
 import sorcer.service.Context;
 import sorcer.service.ContextException;
 
 import java.rmi.RemoteException;
 
 public class CoffeeMakerUI implements edu.pjatk.inn.futurecoffemaker.CoffeeMakerUI {
-    private CoffeeMaker coffeeMakerUI;
+    private edu.pjatk.inn.futurecoffemaker.CoffeeMaker coffeeMakerUI;
 
     public CoffeeMakerUI() {
-        this.coffeeMakerUI = new CoffeeMakerImpl();
+        this.coffeeMakerUI = new CoffeeMakerFuture();
     }
 
     @Override

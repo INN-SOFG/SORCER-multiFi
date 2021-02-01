@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
  * 
  * @author Sarah E. Smith & Mike Sobolewski
  *
- * Starts the console UI for the CoffeeMaker
+ * Starts the console UI for the CoffeeMakerFuture
  */
 public class CoffeemakerClient {
     private static CoffeeMaker coffeeMaker;
@@ -307,7 +307,7 @@ public class CoffeemakerClient {
     
     public static void main(String[] args) {
 	    coffeeMaker = new CoffeeMaker();
-	    System.out.println("Welcome to the CoffeeMaker!\n");
+	    System.out.println("Welcome to the CoffeeMakerFuture!\n");
 	    mainMenu();
 	}
 }

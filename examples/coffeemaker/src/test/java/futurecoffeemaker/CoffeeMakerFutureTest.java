@@ -1,6 +1,6 @@
 package futurecoffeemaker;
 
-import edu.pjatk.inn.futurecoffemaker.CoffeeMaker;
+import edu.pjatk.inn.futurecoffemaker.impl.CoffeeMakerFuture;
 import org.junit.Test;
 import sorcer.service.Context;
 import sorcer.service.MogramException;
@@ -12,24 +12,24 @@ import static sorcer.eo.operator.*;
 import static sorcer.mo.operator.value;
 import static sorcer.so.operator.exert;
 
-public class CoffeMakerTest {
+public class CoffeeMakerFutureTest {
     @Test
     public void testCheckDrinkAvailability() throws MogramException, SignatureException {
-        Routine cmt = task(sig("checkDrinkAvailability", CoffeeMaker.class), "espresso");
+        Routine cmt = task(sig("checkDrinkAvailability", CoffeeMakerFuture.class), "espresso");
         Context out = context(exert(cmt));
         assertEquals(value(out, "coffeeMaker/drinkAvailable"), true);
     }
 
     @Test
     public void testPayForDrink() throws MogramException, SignatureException {
-        Routine cmt = task(sig("payForDrink", CoffeeMaker.class), 10);
+        Routine cmt = task(sig("payForDrink", CoffeeMakerFuture.class), 10);
         Context out = context(exert(cmt));
         assertEquals(value(out, "coffeeMaker/amountPaid"), 10);
     }
 
     @Test
     public void testPrepareBeverage() throws MogramException, SignatureException {
-        Routine cmt = task(sig("prepareBeverage", CoffeeMaker.class), "espresso");
+        Routine cmt = task(sig("prepareBeverage", CoffeeMakerFuture.class), "espresso");
         Context out = context(exert(cmt));
         assertEquals(value(out, "coffeeMaker/beverage"), "espresso");
     }
