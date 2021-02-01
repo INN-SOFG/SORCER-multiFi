@@ -22,12 +22,18 @@ public class CoffeeMakerUI implements edu.pjatk.inn.futurecoffemaker.CoffeeMaker
 
     @Override
     public Context chooseDrinkAndSugar(Context context) throws RemoteException, ContextException {
-        String name           = null;
+        String name   = null;
+        Integer sugar = null;
         if (context.getValue("chooseDrink") != null) {
-            name = (String) context.getValue("chooseDrinkAndSugar");
+            name = (String) context.getValue("chooseDrink");
+        }
+        if (context.getValue("chooseSugar") != null) {
+            sugar = (Integer) context.getValue("chooseSugar");
         }
         coffeeMakerUI.checkDrinkAvailability(context);
         context.putValue("coffeeMakerUI/chosenDrink", name);
+        context.putValue("coffeeMakerUI/chosenSugar", sugar);
+
         return context;
     }
 

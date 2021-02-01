@@ -19,10 +19,13 @@ public class CoffeeMakerUITest {
         assertEquals(true, value(out, "coffeeMakerUI/optionsReturned"));
     }
     @Test
-    public void testChooseDrink() throws MogramException, SignatureException {
-        Routine cmt = task(sig("chooseDrink", CoffeeMakerUI.class), "espresso");
+    public void testChooseDrinkAndSugar() throws MogramException, SignatureException {
+        Routine cmt = task(sig("chooseDrinkAndSugar", CoffeeMakerUI.class),
+                context(ent("chooseDrink", "espresso"), ent("chooseSugar", 10)));
         Context out = context(exert(cmt));
         assertEquals("espresso", value(out, "coffeeMakerUI/chosenDrink"));
+        assertEquals(10, value(out, "coffeeMakerUI/chosenSugar"));
+
     }
 
     @Test
