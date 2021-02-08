@@ -13,3 +13,5 @@ jobs:
         with:
           java-version: 1.8
       - run: gradle wrapper --gradle-version 6.6.1 --distribution-type all
+      - run: ./gradlew dist
+      - run: ./gradlew tests
